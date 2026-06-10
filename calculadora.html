@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Margen y Punto de Equilibrio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .results {
+            margin-top: 30px;
+            background-color: #e8f0fe;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #1a73e8;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+        .value {
+            font-weight: bold;
+            color: #1a73e8;
+        }
+        .graphic-container {
+            margin-top: 25px;
+        }
+        .bar-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .bar-bg {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 20px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .bar-fill-cost {
+            background-color: #ea4335;
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .bar-fill-profit {
+            background-color: #34a853;
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Mi Calculadora Comercial</h2>
+    
+    <div class="form-group">
+        <label for="costoUnitario">Costo Unitario de Producción ($):</label>
+        <input type="number" id="costoUnitario" value="50000" oninput="calcular()">
+    </div>
+    
+    <div class="form-group">
+        <label for="precioVenta">Precio de Venta Estimado ($):</label>
+        <input type="number" id="precioVenta" value="85000" oninput="calcular()">
+    </div>
+    
+    <div class="form-group">
+        <label for="costosFijos">Costos Fijos Mensuales ($):</label>
+        <input type="number" id="costosFijos" value="3000000" oninput="calcular()">
+    </div>
+
+    <div class="results">
+        <div class="result-item">
+            <span>Utilidad Bruta por Unidad:</span>
+            <span class="value" id="resUtilidad">$0</span>
+        </div>
+        <div class="result-item">
+            <span>Margen de Ganancia:</span>
+            <span class="value" id="resMargen">0%</span>
+        </div>
+        <div class="result-item">
+            <span>Punto de Equilibrio:</span>
+            <span class="value" id="resEquilibrio">0 unidades</span>
+        </div>
+    </div>
+
+    <div class="graphic-container">
+        <div class="bar-label"><span>Proporción del Precio de Venta:</span></div>
+        <div class="bar-label"><small>Costo de Producción</small> <small id="lblPorcentajeCosto">0%</small></div>
+        <div class="bar-bg">
+            <div id="barCosto" class="bar-fill-cost"></div>
+        </div>
+        <div class="bar-label"><small>Margen de Utilidad</small> <small id="lblPorcentajeUtilidad">0%</small></div>
+        <div class="bar-bg">
+            <div id="barUtilidad" class="bar-fill-profit"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function calcular() {
+    // Obtener valores de los inputs
+    const costoUnitario = parseFloat(document.getElementById('costoUnitario').value) || 0;
+    const precioVenta = parseFloat(document.getElementById('precioVenta').value) || 0;
+    const costosFijos = parseFloat(document.getElementById('costosFijos').value) || 0;
+
+    // Cálculos
+    const utilidadBruta = precioVenta - costoUnitario;
+    
+    let margenGanancia = 0;
+    if (precioVenta > 0) {
+        margenGanancia = (utilidadBruta / precioVenta) * 100;
+    }
+
+    let puntoEquilibrio = 0;
+    if (utilidadBruta > 0) {
+        puntoEquilibrio = Math.ceil(costosFijos / utilidadBruta);
+    }
+
+    // Formatear moneda de forma simple
+    const formatearMoneda = (valor) => {
+        return '$' + valor.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    };
+
+    // Mostrar resultados en la interfaz
+    document.getElementById('resUtilidad').innerText = formatearMoneda(utilidadBruta);
+    document.getElementById('resMargen').innerText = (margenGanancia > 0 ? margenGanancia.toFixed(1) : 0) + '%';
+    document.getElementById('resEquilibrio').innerText = (puntoEquilibrio > 0 ? puntoEquilibrio.toLocaleString('es-CO') : 0) + ' uds / mes';
+
+    // Actualizar gráfico visual
+    if (precioVenta > 0 && precioVenta >= costoUnitario) {
+        const porcCosto = (costoUnitario / precioVenta) * 100;
+        const porcUtilidad = (utilidadBruta / precioVenta) * 100;
+
+        document.getElementById('barCosto').style.width = porcCosto + '%';
+        document.getElementById('lblPorcentajeCosto').innerText = porcCosto.toFixed(1) + '%';
+        
+        document.getElementById('barUtilidad').style.width = porcUtilidad + '%';
+        document.getElementById('lblPorcentajeUtilidad').innerText = porcUtilidad.toFixed(1) + '%';
+    } else {
+        document.getElementById('barCosto').style.width = '0%';
+        document.getElementById('lblPorcentajeCosto').innerText = '0%';
+        document.getElementById('barUtilidad').style.width = '0%';
+        document.getElementById('lblPorcentajeUtilidad').innerText = '0%';
+    }
+}
+
+// Ejecutar el cálculo inicial al cargar la página
+calcular();
+</script>
+
+</body>
+</html>
