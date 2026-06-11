@@ -17,14 +17,13 @@
             background-color: #f8fafc;
             color: #334155;
             line-height: 1.6;
-            padding-bottom: 60px; /* Espacio para el botón flotante */
+            padding-bottom: 60px;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* REGLA DE SEGURIDAD PARA IMÁGENES: Evita que fotos muy grandes rompan la web */
         img {
             max-width: 100%;
             height: auto;
@@ -64,7 +63,7 @@
             color: #2563eb;
         }
 
-        /* Sección Hero (Principal de Ventas) */
+        /* Sección Hero */
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
             color: #ffffff;
@@ -125,7 +124,7 @@
             font-size: 15px;
         }
 
-        /* Sección Nosotros (Quiénes Somos, Misión, Visión y Valores) */
+        /* Sección Nosotros */
         .nosotros-section {
             background-color: #f1f5f9;
             padding: 60px 0;
@@ -344,7 +343,7 @@
             left: 0;
         }
 
-        /* SECCIÓN DE FICHAS TÉCNICAS COMPLETAMENTE CENTRADA */
+        /* Sección Fichas */
         .fichas-section {
             width: 100%;
             text-align: center;
@@ -402,7 +401,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.04);
             transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
             width: 100%;
-            overflow: hidden; /* Parche de seguridad para que nada desborde la tarjeta */
+            overflow: hidden;
         }
         .preview-card:hover {
             transform: translateY(-4px);
@@ -417,20 +416,20 @@
         }
         .preview-img-link {
             display: block;
-            width: 100%; /* Obliga al enlace a respetar el ancho de la caja */
+            width: 100%;
             overflow: hidden;
             border-radius: 4px;
             border: 1px solid #cbd5e1;
         }
         .preview-img-link img {
             width: 100%;
-            max-width: 100%; /* Cero desbordes */
+            max-width: 100%;
             height: auto;
             display: block;
-            object-fit: contain; /* Ajusta la imagen sin deformarla */
+            object-fit: contain;
         }
 
-        /* SECCIÓN DE COMPLEMENTOS CENTRADOS Y EQUIDISTANTES */
+        /* Sección Complementos */
         .complements-section {
             background-color: #ffffff;
             padding: 80px 0;
@@ -508,7 +507,7 @@
             background-color: #2563eb;
         }
 
-        /* Sección de Contacto */
+        /* Sección Contacto */
         .contact {
             background-color: #0f172a;
             color: #ffffff;
@@ -580,7 +579,6 @@
             background-color: #1d4ed8;
         }
 
-        /* Botón de WhatsApp Flotante */
         .whatsapp-floating {
             position: fixed;
             bottom: 20px;
@@ -605,7 +603,6 @@
             transform: scale(1.05);
         }
 
-        /* Footer */
         footer {
             background-color: #020617;
             color: #64748b;
@@ -615,36 +612,17 @@
             border-top: 1px solid #1e293b;
         }
 
-        /* Adaptabilidad Móvil */
         @media (max-width: 1024px) {
-            .complement-card {
-                width: calc(50% - 15px);
-            }
-            .ficha-bloque-modular {
-                width: calc(50% - 20px);
-            }
+            .complement-card { width: calc(50% - 15px); }
+            .ficha-bloque-modular { width: calc(50% - 20px); }
         }
         @media (max-width: 650px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero h1 {
-                font-size: 32px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
-            .product-box {
-                padding: 20px;
-            }
-            .contact-layout {
-                flex-direction: column;
-            }
-            .complement-card, .ficha-bloque-modular, .nosotros-grid {
-                width: 100%;
-                max-width: 100%;
-            }
+            nav { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .product-box { padding: 20px; }
+            .contact-layout { flex-direction: column; }
+            .complement-card, .ficha-bloque-modular, .nosotros-grid { width: 100%; max-width: 100%; }
         }
     </style>
 </head>
@@ -873,26 +851,26 @@
                     <p style="color: #64748b; font-size: 14px;">📍 Respaldo corporativo y técnico garantizado por IsoSealTech SAS en toda Colombia.</p>
                 </div>
                 <div class="form-container">
-                    <form onsubmit="event.preventDefault(); alert('¡Gracias! Hemos recibido tu solicitud. Nos comunicaremos contigo pronto.');">
+                    <form name="cotizacion" method="POST" data-netlify="true">
                         <div class="form-group">
                             <label for="nombre">Nombre Completo / Empresa:</label>
-                            <input type="text" id="nombre" placeholder="Ej. Constructora Norte" required>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Constructora Norte" required>
                         </div>
                         <div class="form-group">
                             <label for="correo">Correo Electrónico:</label>
-                            <input type="email" id="correo" placeholder="contacto@empresa.com" required>
+                            <input type="email" id="correo" name="email" placeholder="contacto@empresa.com" required>
                         </div>
                         <div class="form-group">
                             <label for="telefono">Número de Celular / Contacto:</label>
-                            <input type="tel" id="telefono" placeholder="Ej. 310 123 4567" required>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ej. 310 123 4567" required>
                         </div>
                         <div class="form-group">
                             <label for="cantidad">Metros Cuadrados Estimados (m²):</label>
-                            <input type="number" id="cantidad" placeholder="Ej. 350">
+                            <input type="number" id="cantidad" name="cantidad" placeholder="Ej. 350">
                         </div>
                         <div class="form-group">
                             <label for="mensaje">Detalles del Proyecto:</label>
-                            <textarea id="mensaje" rows="3" placeholder="Cuéntanos la ubicación de la obra, el espesor de núcleo requerido o tipo de estructura..."></textarea>
+                            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos la ubicación de la obra, el espesor de núcleo requerido o tipo de estructura..."></textarea>
                         </div>
                         <button type="submit" class="btn-submit">Enviar Solicitud de Cotización</button>
                     </form>
