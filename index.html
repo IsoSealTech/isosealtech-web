@@ -429,6 +429,70 @@
             object-fit: contain;
         }
 
+        /* NUEVOS ESTILOS: Sección Asesoría Técnica */
+        .asesoria-section {
+            background-color: #f1f5f9;
+            padding: 80px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .asesoria-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+        .asesoria-images-container {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .asesoria-images-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: block;
+        }
+        .asesoria-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        .asesoria-details h2 {
+            font-size: 34px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .asesoria-details p {
+            color: #475569;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .asesoria-list {
+            margin: 25px 0 35px 0;
+            list-style: none;
+        }
+        .asesoria-list li {
+            margin-bottom: 15px;
+            padding-left: 28px;
+            position: relative;
+            font-size: 15.5px;
+            color: #334155;
+            line-height: 1.5;
+        }
+        .asesoria-list li::before {
+            content: "✓";
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+
         /* Sección Complementos */
         .complements-section {
             background-color: #ffffff;
@@ -620,9 +684,11 @@
             nav { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
-            .product-box { padding: 20px; }
+            .product-box, .asesoria-box { padding: 20px; }
             .contact-layout { flex-direction: column; }
             .complement-card, .ficha-bloque-modular, .nosotros-grid { width: 100%; max-width: 100%; }
+            .asesoria-box { flex-direction: column-reverse; gap: 30px; }
+            .asesoria-details h2 { font-size: 28px; }
         }
     </style>
 </head>
@@ -639,6 +705,7 @@
                     <li><a href="#beneficios">Beneficios</a></li>
                     <li><a href="#video-construccion">Sistema</a></li>
                     <li><a href="#producto">Especificaciones</a></li>
+                    <li><a href="#asesoria">Asesoría</a></li>
                     <li><a href="#complementos">Complementos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
@@ -668,7 +735,7 @@
         <div class="container">
             <div class="quienes-somos-intro">
                 <h3>🏢 Quiénes Somos</h3>
-                <p>Somos una organización liderada por especialistas en ingeniería civil con más de 20 años de trayectoria en el sector de las cubiertas estructurales. En IsoSealTech SAS, hemos volcado toda esta experiencia técnica para desarrollar un sistema termoacústico verdaderamente novedoso en el mercado colombiano. Entendemos las exigencias de la construcción desde adentro, por lo que fabricamos soluciones definitivas que combinan alta ingeniería y materiales de vanguardia —como nuestro exclusivo núcleo de polietileno— para superar las expectativas de confort, durabilidad y seguridad en cada obra.</p>
+                <p>Somos una organization liderada por especialistas en ingeniería civil con más de 20 años de trayectoria en el sector de las cubiertas estructurales. En IsoSealTech SAS, hemos volcado toda esta experiencia técnica para desarrollar un sistema termoacústico verdaderamente novedoso en el mercado colombiano. Entendemos las exigencias de la construcción desde adentro, por lo que fabricamos soluciones definitivas que combinan alta ingeniería y materiales de vanguardia —como nuestro exclusivo núcleo de polietileno— para superar las expectativas de confort, durabilidad y seguridad en cada obra.</p>
             </div>
             <div class="nosotros-grid">
                 <div class="nosotros-card">
@@ -745,7 +812,7 @@
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
-                </iframe>
+                 frame>
             </div>
         </div>
     </section>
@@ -798,6 +865,30 @@
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="asesoria" class="asesoria-section">
+        <div class="container">
+            <div class="asesoria-box">
+                <div class="asesoria-images-container">
+                    <img src="https://docs.google.com/uc?export=view&id=1QKt6C4i6oYEUn7sJyS4HaXN6a8CNBllE" alt="Asesoría Técnica IsoSealTech SAS">
+                    <img src="https://docs.google.com/uc?export=view&id=10Zp6ek5TbAQhrByicuQOqcYGtAcVE6eh" alt="Instalación y dimensionamiento de cubiertas">
+                </div>
+                <div class="asesoria-details">
+                    <h2>Suministro con Respaldo Técnico: Evita Errores y Costos Extra</h2>
+                    <p>En IsoSealTech SAS entendemos que comprar materiales técnicos como tejas termoacústicas y perfiles es solo el primer paso. Una mala elección de calibre, accesorio o perfil puede resultar en filtraciones, ruidos molestos o un gasto innecesario de presupuesto.</p>
+                    <p><strong>Nuestro compromiso va más allá de la venta.</strong> Te ofrecemos el acompañamiento experto para asegurar la correcta especificación de tu cubierta estructural.</p>
+                    <ul class="asesoria-list">
+                        <li><strong>Análisis preciso del producto:</strong> Evaluamos las condiciones de tu proyecto y exigencias climáticas para recomendarte el espesor exacto.</li>
+                        <li><strong>Cálculo de complementos:</strong> Especificamos los perfiles de acero PHR, fijaciones y accesorios con ajuste perfecto a tu estructura.</li>
+                        <li><strong>Red de instaladores aliados:</strong> Nosotros no realizamos la instalación directa, pero te conectamos y recomendamos profesionales expertos certificados de total confianza para ejecutar la obra.</li>
+                    </ul>
+                    <a href="https://wa.me/573107905598?text=Hola%20Jorge,%20vengo%20de%20la%20página%20web.%20Quiero%20recibir%20asesoría%20técnica%20sobre%20mi%20proyecto%20de%20cubiertas." target="_blank" class="btn-cta">
+                        Contactar a un Asesor Técnico
+                    </a>
                 </div>
             </div>
         </div>
