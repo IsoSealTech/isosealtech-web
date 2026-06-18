@@ -269,6 +269,7 @@
         /* Sección de Producto */
         .product-info {
             padding: 80px 0 20px 0;
+            background-color: #ffffff;
         }
         .product-box {
             display: flex;
@@ -427,6 +428,91 @@
             height: auto;
             display: block;
             object-fit: contain;
+        }
+
+        /* SECCIÓN INCENTIVOS LEY (NUEVA E INTEGRADA) */
+        .incentivos-section {
+            background-color: #f8fafc; 
+            padding: 80px 0; 
+            border-top: 1px solid #e2e8f0;
+        }
+        .incentivos-box {
+            background-color: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 12px; 
+            padding: 40px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .incentivos-layout {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            align-items: center; 
+            margin-bottom: 30px;
+        }
+        .incentivos-texto {
+            flex: 1; 
+            min-width: 280px;
+        }
+        .incentivos-texto h3 {
+            font-size: 24px; 
+            color: #0f172a; 
+            margin-bottom: 15px;
+        }
+        .incentivos-texto p {
+            color: #475569; 
+            font-size: 16px; 
+            margin-bottom: 15px;
+        }
+        .incentivos-legal-box {
+            flex: 1; 
+            min-width: 280px; 
+            background-color: #f1f5f9; 
+            padding: 30px; 
+            border-radius: 8px; 
+            border-left: 4px solid #2563eb;
+        }
+        .incentivos-legal-box h4 {
+            color: #0f172a; 
+            font-size: 18px; 
+            margin-bottom: 12px;
+        }
+        .incentivos-legal-box p {
+            color: #475569; 
+            font-size: 14.5px; 
+            line-height: 1.6;
+        }
+        .btn-legal-link {
+            background-color: #475569; 
+            color: white; 
+            padding: 12px 20px; 
+            font-size: 14px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            transition: background-color 0.3s; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px;
+        }
+        .btn-legal-link:hover {
+            background-color: #334155;
+        }
+        .btn-upme-link {
+            background-color: #0f172a; 
+            color: white; 
+            padding: 12px 20px; 
+            font-size: 14px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            transition: background-color 0.3s; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px;
+        }
+        .btn-upme-link:hover {
+            background-color: #1e293b;
         }
 
         /* SECCIÓN ASESORÍA TÉCNICA */
@@ -684,7 +770,7 @@
             nav { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
-            .product-box, .asesoria-box { padding: 20px; }
+            .product-box, .asesoria-box, .incentivos-box { padding: 20px; }
             .contact-layout { flex-direction: column; }
             .complement-card, .ficha-bloque-modular, .nosotros-grid { width: 100%; max-width: 100%; }
             .asesoria-box { flex-direction: column-reverse; gap: 30px; }
@@ -703,9 +789,8 @@
                 <ul class="nav-links">
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#beneficios">Beneficios</a></li>
-                    <li><a href="#video-construccion">Sistema</a></li>
                     <li><a href="#producto">Especificaciones</a></li>
-                    <li><a href="#asesoria">Asesoría</a></li>
+                    <li><a href="#incentivos">Incentivos y Asesoría</a></li>
                     <li><a href="#complementos">Complementos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
@@ -735,7 +820,7 @@
         <div class="container">
             <div class="quienes-somos-intro">
                 <h3>🏢 Quiénes Somos</h3>
-                <p>Somos una organización liderada por especialistas en ingeniería civil con más de 20 años de trayectoria en el sector de las cubiertas estructurales. En IsoSealTech SAS, hemos volcado toda esta experiencia técnica para desarrollar un sistema termoacústico verdaderamente novedoso en el mercado colombiano. Entendemos las exigencias de la construcción desde adentro, por lo que fabricamos soluciones definitivas que combinan alta ingeniería y materiales de vanguardia —como nuestro exclusivo núcleo de polietileno— para superar las expectativas de confort, durabilidad and seguridad en cada obra.</p>
+                <p>Somos una organización liderada por especialistas en ingeniería civil con más de 20 años de trayectoria en el sector de las cubiertas estructurales. En IsoSealTech SAS, hemos volcado toda esta experiencia técnica para desarrollar un system termoacústico verdaderamente novedoso en el mercado colombiano. Entendemos las exigencias de la construcción desde adentro, por lo que fabricamos soluciones definitivas que combinan alta ingeniería y materiales de vanguardia —como nuestro exclusivo núcleo de polietileno— para superar las expectativas de confort, durabilidad y seguridad en cada obra.</p>
             </div>
             <div class="nosotros-grid">
                 <div class="nosotros-card">
@@ -870,6 +955,44 @@
         </div>
     </section>
 
+    <section id="incentivos" class="incentivos-section">
+        <div class="container">
+            <h2 class="section-title">Incentivos Fiscales de Ley para tu Proyecto</h2>
+            <p class="section-subtitle">Nuestras soluciones integradas con alma de polietileno califican en los marcos de eficiencia energética en Colombia (Ley 1715 de 2014 y Ley 2099 de 2021).</p>
+            
+            <div class="incentivos-box">
+                <div class="incentivos-layout">
+                    <div class="incentivos-texto">
+                        <h3>¿A qué beneficios puede acceder tu obra?</h3>
+                        <p>Al integrar nuestras tejas sándwich en diseños enfocados en la <strong>Gestión Eficiente de la Energía (GEE)</strong> para reducir el uso de aire acondicionado, el inversionista final del proyecto puede aplicar a:</p>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 20px;">
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 15px;"><span style="color: #2563eb; font-weight: bold; position: absolute; left: 0;">✓</span><strong>Exclusión del 19% de IVA:</strong> Aplica sobre el 100% de la teja integrada (acero, núcleo de polietileno y adhesivo químico) y los servicios de instalación asociados.</li>
+                            <li style="margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 15px;"><span style="color: #2563eb; font-weight: bold; position: absolute; left: 0;">✓</span><strong>Deducción Especial de Renta:</strong> El cliente final / inversionista puede deducir hasta el 50% del valor total de la inversión de su impuesto de renta ante la DIAN.</li>
+                        </ul>
+                    </div>
+                    <div class="incentivos-legal-box">
+                        <h4>⚖️ Declaración de Alcance y Transparencia</h4>
+                        <p>En <strong>IsoSealTech SAS</strong> actuamos con total honestidad: estos beneficios fiscales son otorgados por el Estado al proyecto global y no de manera automática en el comercio tradicional. <strong>Nuestra empresa no realiza el trámite ni garantiza su aprobación.</strong></p>
+                        <p style="margin-top: 10px;">Nosotros te entregamos un producto con el rendimiento idóneo, fichas técnicas completas y coeficientes de aislamiento para que tu equipo de ingeniería radique con éxito el proyecto.</p>
+                    </div>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+
+                <h4 style="text-align: center; color: #0f172a; font-size: 18px; margin-bottom: 20px; font-weight: 700;">🏛️ Ruta y Fuentes Oficiales para Gestión de tu Equipo</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    <a href="https://www.suin-juriscol.gov.co/viewDocument.asp?id=30052917" target="_blank" class="btn-legal-link">
+                        <span>📋</span> Consultar Ley en SUIN-Juriscol
+                    </a>
+                    <a href="https://www.google.com/search?q=ley+de+eficiencia+energetica+colombia" target="_blank" class="btn-upme-link">
+                        <span>🏛️</span> Ventanilla Única de Trámites UPME
+                    </a>
+                </div>
+                <p style="text-align: center; color: #64748b; font-size: 13px; margin-top: 15px;">*Nota legal: Para emitir la facturación electrónica con exclusión de IVA, el cliente debe presentar el Certificado de la UPME aprobado antes del despacho o producción masiva.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="asesoria" class="asesoria-section">
         <div class="container">
             <div class="asesoria-box">
@@ -884,9 +1007,10 @@
                     <ul class="asesoria-list">
                         <li><strong>Análisis preciso del producto:</strong> Evaluamos las condiciones de tu proyecto y exigencias climáticas para recomendarte el espesor exacto.</li>
                         <li><strong>Cálculo de complementos:</strong> Especificamos los perfiles de acero PHR, fijaciones y accesorios con ajuste perfecto a tu estructura.</li>
+                        <li><strong>Alineación documentaria para UPME:</strong> Te facilitamos las fichas técnicas y coeficientes R/U térmicos exactos de nuestro sándwich integrado para que tu equipo arme el Estudio de Eficiencia Energética sin retrasos.</li>
                         <li><strong>Red de instaladores aliados:</strong> Nosotros no realizamos la instalación directa, pero te conectamos y recomendamos profesionales expertos certificados de total confianza para ejecutar la obra.</li>
                     </ul>
-                    <a href="https://wa.me/573107905598?text=Hola%20Jorge,%20vengo%20de%20la%20página%20web.%20Quiero%20recibir%20asesoría%20técnica%20sobre%20mi%20proyecto%20de%20cubiertas." target="_blank" class="btn-cta">
+                    <a href="https://wa.me/573107905598?text=Hola%20Jorge,%20vengo%20de%20la%20página%20web.%20Quiero%20recibir%20asesoría%20técnica%20sobre%20mi%20proyecto%20de%20cubiertas%20y%20los%20soportes%20para%20la%20UPME." target="_blank" class="btn-cta">
                         Contactar a un Asesor Técnico
                     </a>
                 </div>
