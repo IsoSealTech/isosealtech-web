@@ -368,9 +368,9 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            width: calc(25% - 20px);
-            min-width: 230px;
-            max-width: 260px;
+            width: calc(33.33% - 20px);
+            min-width: 260px;
+            max-width: 340px;
         }
         .btn-ficten {
             padding: 12px 15px;
@@ -392,6 +392,8 @@
         .btn-blue:hover { background-color: #1d4ed8; transform: translateY(-2px); }
         .btn-gray { background-color: #475569; }
         .btn-gray:hover { background-color: #334155; transform: translateY(-2px); }
+        .btn-dark { background-color: #0f172a; }
+        .btn-dark:hover { background-color: #1e293b; transform: translateY(-2px); }
 
         .preview-card {
             background-color: #ffffff;
@@ -920,7 +922,7 @@
                         <li><strong>Espesores Disponibles:</strong> Rangos flexibles desde 5mm hasta 40mm según la exigencia del proyecto.</li>
                         <li><strong>Ancho Útil:</strong> 0.50 metros estándar optimizado para un montaje rápido y preciso.</li>
                         <li><strong>Seguridad de Cierre:</strong> Sistema de encaje por grafado continuo que anula toda filtración de agua.</li>
-                        <li><strong>Acabados:</strong> Variedad de colores de alta estabilidad and resistencia a la intemperie.</li>
+                        <li><strong>Acabados:</strong> Variedad de colores de alta estabilidad y resistencia a la intemperie.</li>
                     </ul>
                 </div>
             </div>
@@ -928,6 +930,7 @@
             <div class="fichas-section">
                 <h4>Descarga de Documentación y Fichas Técnicas</h4>
                 <div class="fichas-flex-container">
+                    
                     <div class="ficha-bloque-modular">
                         <a href="https://drive.google.com/file/d/18I1bhItXUQmpU_bk3eEfvwatT-W3l4Xm/view?usp=sharing" target="_blank" class="btn-ficten btn-blue">
                             📄 Ficha Técnica IsoFoam (5mm - 10mm - 20mm)
@@ -939,6 +942,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="ficha-bloque-modular">
                         <a href="https://drive.google.com/file/d/1CS1Aj7ohS53MgTOKpxmCIb4ilrm8CBoK/view?usp=sharing" target="_blank" class="btn-ficten btn-gray">
                             📄 Ficha técnica placa en espuma de polietileno (40mm - 50mm)
@@ -950,6 +954,19 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="ficha-bloque-modular">
+                        <a href="https://drive.google.com/file/d/1SlH8LAUQebLkO14k-OKoaBVbDVuVKkkX/view?usp=sharing" target="_blank" class="btn-ficten btn-dark">
+                            📄 Ficha Técnica Trapezoidal IsoFoam TRZ
+                        </a>
+                        <div class="preview-card">
+                            <p>🔍 Vista previa Documentación Técnica</p>
+                            <a href="https://drive.google.com/file/d/1SlH8LAUQebLkO14k-OKoaBVbDVuVKkkX/view?usp=sharing" target="_blank" class="preview-img-link">
+                                <img src="https://drive.google.com/thumbnail?id=106dyksm5LBrAyZG6dgy9NBbXaBZgcAO4&sz=w500" alt="Adelanto Ficha Técnica Trapezoidal IsoFoam TRZ">
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -958,7 +975,7 @@
     <section id="incentivos" class="incentivos-section">
         <div class="container">
             <h2 class="section-title">Incentivos Fiscales de Ley para tu Proyecto</h2>
-            <p class="section-subtitle">Nuestres soluciones integradas con alma de polietileno califican en los marcos de eficiencia energética en Colombia (Ley 1715 de 2014 y Ley 2099 de 2021).</p>
+            <p class="section-subtitle">Nuestras soluciones integradas con alma de polietileno califican en los marcos de eficiencia energética en Colombia (Ley 1715 de 2014 y Ley 2099 de 2021).</p>
             
             <div class="incentivos-box">
                 <div class="incentivos-layout">
@@ -967,8 +984,7 @@
                         <p>Al integrar nuestras soluciones de cubiertas sándwich en diseños enfocados en la <strong>Gestión Eficiente de la Energía (GEE)</strong>, el inversionista final del proyecto puede aplicar a:</p>
                         <ul style="list-style: none; padding-left: 0; margin-bottom: 20px;">
                             <li style="margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 15px; line-height: 1.5;"><span style="color: #2563eb; font-weight: bold; position: absolute; left: 0;">✓</span><strong>Deducción Especial de Renta (Aplica a todo formato):</strong> El inversionista / dueño del proyecto tiene derecho a deducir hasta el 50% del valor total de la inversión directa de su impuesto de renta ante la DIAN. Este beneficio aplica plenamente tanto si adquieres el <strong>producto formado monolítico de fábrica</strong> como si compras los <strong>materiales sueltos</strong> (tejas sueltas y placas de aislamiento de polietileno) para su armado en la obra.</li>
-                            
-                            </ul>
+                        </ul>
                     </div>
                     <div class="incentivos-legal-box">
                         <h4>⚖️ Declaración de Alcance y Transparencia</h4>
@@ -989,7 +1005,8 @@
                     </a>
                 </div>
                 <p style="text-align: center; color: #64748b; font-size: 13.5px; margin-top: 20px; line-height: 1.5; font-weight: 500;">
-                    ⚠️ *Condición Esencial de Ley: Estos beneficios tributarios aplican única y exclusivamente si el diseño del proyecto evidencia una disminución verificable en el consumo energético global de la edificación (por ejemplo, demostrando un menor uso de sistemas de aire acondicionado o climatización artificial gracias al alto aislamiento de la cubierta). </p>
+                    ⚠️ *Condición Esencial de Ley: Estos beneficios tributarios aplican única y exclusivamente si el diseño del proyecto evidencia una disminución verificable en el consumo energético global de la edificación (por ejemplo, demostrando un menor uso de sistemas de aire acondicionado o climatización artificial gracias al alto aislamiento de la cubierta).
+                </p>
             </div>
         </div>
     </section>
