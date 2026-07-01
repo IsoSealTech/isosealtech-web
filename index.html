@@ -1,4 +1,933 @@
-<div class="fichas-section">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IsoSealTech SAS | Fábrica de Tejas Termoacústicas Aislantes</title>
+    <meta name="description" content="Venta de tejas termoacústicas premium con núcleo de polietileno de celda cerrada. Aislamiento térmico y acústico en Cali y toda Colombia.">
+    <style>
+        /* Estilos Globales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Barra de Navegación */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo img {
+            height: 75px;
+            width: auto;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Sección Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #93c5fd;
+            max-width: 750px;
+            margin: 0 auto 35px auto;
+        }
+        .btn-cta {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .btn-cta:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Barra de Confianza Industrial */
+        .trust-bar {
+            background-color: #e2e8f0;
+            padding: 20px 0;
+            border-bottom: 1px solid #cbd5e1;
+        }
+        .trust-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+        .trust-item {
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+
+        /* Sección Nosotros */
+        .nosotros-section {
+            background-color: #f1f5f9;
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .quienes-somos-intro {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 8px;
+            border-left: 4px solid #0f172a;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            margin-bottom: 30px;
+        }
+        .quienes-somos-intro h3 {
+            color: #0f172a;
+            font-size: 24px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quienes-somos-intro p {
+            color: #475569;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .nosotros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .nosotros-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .nosotros-card h3 {
+            color: #0f172a;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nosotros-card p, .nosotros-card ul {
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .nosotros-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .nosotros-card ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 18px;
+        }
+        .nosotros-card ul li::before {
+            content: "•";
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Sección de Beneficios */
+        .benefits {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            color: #0f172a;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 50px;
+            font-size: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .grid-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background-color: #f8fafc;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+        }
+        .card-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+        .card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* Sección de Video */
+        .video-section {
+            background-color: #f1f5f9;
+            padding: 80px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .video-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .video-wrapper:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Sección de Producto */
+        .product-info {
+            padding: 80px 0 20px 0;
+            background-color: #ffffff;
+        }
+        .product-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 30px;
+        }
+        .product-image-container {
+            flex: 1;
+            min-width: 300px;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .product-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product-image-overlay span {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        }
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        .product-details h3 {
+            font-size: 28px;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+        .specs-list {
+            margin: 20px 0;
+            list-style: none;
+        }
+        .specs-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 15px;
+        }
+        .specs-list li::before {
+            content: "✓";
+            color: #22c55e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Sección Fichas */
+        .fichas-section {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+        .fichas-section h4 {
+            font-size: 24px;
+            color: #0f172a;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .fichas-flex-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .ficha-bloque-modular {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: calc(25% - 20px); /* Ajustado a 4 columnas por defecto en pantallas grandes */
+            min-width: 260px;
+            max-width: 340px;
+        }
+        .btn-ficten {
+            padding: 12px 15px;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, background-color 0.3s;
+            width: 100%;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-blue { background-color: #2563eb; }
+        .btn-blue:hover { background-color: #1d4ed8; transform: translateY(-2px); }
+        .btn-gray { background-color: #475569; }
+        .btn-gray:hover { background-color: #334155; transform: translateY(-2px); }
+        .btn-dark { background-color: #0f172a; }
+        .btn-dark:hover { background-color: #1e293b; transform: translateY(-2px); }
+
+        .preview-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            width: 100%;
+            overflow: hidden;
+        }
+        .preview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
+            border-color: #3b82f6;
+        }
+        .preview-card p {
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 10px;
+        }
+        .preview-img-link {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+        }
+        .preview-img-link img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* SECCIÓN INCENTIVOS LEY */
+        .incentivos-section {
+            background-color: #f8fafc; 
+            padding: 80px 0; 
+            border-top: 1px solid #e2e8f0;
+        }
+        .incentivos-box {
+            background-color: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 12px; 
+            padding: 40px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .incentivos-layout {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            align-items: center; 
+            margin-bottom: 30px;
+        }
+        .incentivos-texto {
+            flex: 1; 
+            min-width: 280px;
+        }
+        .incentivos-texto h3 {
+            font-size: 24px; 
+            color: #0f172a; 
+            margin-bottom: 15px;
+        }
+        .incentivos-texto p {
+            color: #475569; 
+            font-size: 16px; 
+            margin-bottom: 15px;
+        }
+        .incentivos-legal-box {
+            flex: 1; 
+            min-width: 280px; 
+            background-color: #f1f5f9; 
+            padding: 30px; 
+            border-radius: 8px; 
+            border-left: 4px solid #2563eb;
+        }
+        .incentivos-legal-box h4 {
+            color: #0f172a; 
+            font-size: 18px; 
+            margin-bottom: 12px;
+        }
+        .incentivos-legal-box p {
+            color: #475569; 
+            font-size: 14.5px; 
+            line-height: 1.6;
+        }
+        .btn-legal-link {
+            background-color: #475569; 
+            color: white; 
+            padding: 12px 20px; 
+            font-size: 14px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            transition: background-color 0.3s; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px;
+        }
+        .btn-legal-link:hover {
+            background-color: #334155;
+        }
+        .btn-upme-link {
+            background-color: #0f172a; 
+            color: white; 
+            padding: 12px 20px; 
+            font-size: 14px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            transition: background-color 0.3s; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px;
+        }
+        .btn-upme-link:hover {
+            background-color: #1e293b;
+        }
+
+        /* SECCIÓN ASESORÍA TÉCNICA */
+        .asesoria-section {
+            background-color: #f1f5f9;
+            padding: 80px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .asesoria-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+        .asesoria-images-container {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .asesoria-images-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: block;
+        }
+        .asesoria-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        .asesoria-details h2 {
+            font-size: 34px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .asesoria-details p {
+            color: #475569;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .asesoria-list {
+            margin: 25px 0 35px 0;
+            list-style: none;
+        }
+        .asesoria-list li {
+            margin-bottom: 15px;
+            padding-left: 28px;
+            position: relative;
+            font-size: 15.5px;
+            color: #334155;
+            line-height: 1.5;
+        }
+        .asesoria-list li::before {
+            content: "✓";
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+
+        /* Sección Complementos */
+        .complements-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .complements-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between; 
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .complement-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            transition: box-shadow 0.3s, transform 0.3s;
+            width: calc(25% - 15px); 
+            min-width: 240px; 
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .complement-card:hover {
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            transform: translateY(-5px);
+            border-color: #cbd5e1;
+        }
+        .complement-img-wrapper {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+            background-color: #cbd5e1;
+        }
+        .complement-img-wrapper img {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .complement-card h3 {
+            font-size: 17px;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .complement-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .btn-complement {
+            background-color: #0f172a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+            display: block;
+        }
+        .btn-complement:hover {
+            background-color: #2563eb;
+        }
+
+        /* Sección Contacto */
+        .contact {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 80px 0;
+        }
+        .contact-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        .contact-info-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .contact-info-text h2 {
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+        .contact-info-text p {
+            color: #94a3b8;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .form-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: #ffffff;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        .btn-submit {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #1d4ed8;
+        }
+
+        .whatsapp-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #22c55e;
+            color: white;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+        .whatsapp-floating:hover {
+            background-color: #16a34a;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #020617;
+            color: #64748b;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            border-top: 1px solid #1e293b;
+        }
+
+        @media (max-width: 1024px) {
+            .complement-card { width: calc(50% - 15px); }
+            .ficha-bloque-modular { width: calc(50% - 20px); } /* Ordena las fichas en 2 columnas para pantallas medianas */
+        }
+        @media (max-width: 650px) {
+            nav { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .product-box, .asesoria-box, .incentivos-box { padding: 20px; }
+            .contact-layout { flex-direction: column; }
+            .complement-card, .ficha-bloque-modular, .nosotros-grid { width: 100%; max-width: 100%; }
+            .asesoria-box { flex-direction: column-reverse; gap: 30px; }
+            .asesoria-details h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="LOGO-ISOSEALTECH.jpg" alt="Logo IsoSealTech SAS">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#producto">Especificaciones</a></li>
+                    <li><a href="#incentivos">Incentivos y Asesoría</a></li>
+                    <li><a href="#complementos">Complementos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 style="text-transform: none;">Fábrica y Venta de Tejas Termoacústicas Aislantes</h1>
+            <p>Protege tus proyectos industriales y residenciales del calor y el ruido extremo con tecnología de núcleo sellado de alta resistencia.</p>
+            <a href="#contacto" class="btn-cta">Cotizar Proyecto en Sitio</a>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">🏭 Producto Fabricado con Alta Ingeniería</div>
+                <div class="trust-item">🌧️ Núcleo 100% Impermeable Anti-Filtraciones</div>
+                <div class="trust-item">📍 Despachos y Atención en Cali y Todo Colombia</div>
+            </div>
+        </div>
+    </div>
+
+    <section id="nosotros" class="nosotros-section">
+        <div class="container">
+            <div class="quienes-somos-intro">
+                <h3>🏢 Quiénes Somos</h3>
+                <p>Somos una organización liderada por especialistas en ingeniería civil con más de 20 años de trayectoria en el sector de las cubiertas estructurales. En IsoSealTech SAS, hemos volcado toda esta experiencia técnica para desarrollar un sistema termoacústico verdaderamente novedoso en el mercado colombiano. Entendemos las exigencias de la construcción desde adentro, por lo que fabricamos soluciones definitivas que combinan alta ingeniería y materiales de vanguardia —como nuestro exclusivo núcleo de polietileno— para superar las expectativas de confort, durabilidad y seguridad en cada obra.</p>
+            </div>
+            <div class="nosotros-grid">
+                <div class="nosotros-card">
+                    <h3>🎯 Nuestra Misión</h3>
+                    <p>Fabricar y proveer soluciones de aislamiento termoacústico de alta ingeniería para proyectos en toda Colombia. Entregamos cubiertas premium con núcleo de polietileno que garantizan el máximo confort térmico, reducción del ruido y durabilidad estructural insuperable.</p>
+                </div>
+                <div class="nosotros-card">
+                    <h3>👁️ Nuestra Visión</h3>
+                    <p>Consolidarnos como la empresa líder y el referente técnico a nivel nacional en sistemas de cubiertas inteligentes y herméticas, reconocidos por nuestra innovación constante y compromiso con la eficiencia energética de las edificaciones del país.</p>
+                </div>
+                <div class="nosotros-card" style="border-left-color: #22c55e;">
+                    <h3>💎 Valores Corporativos</h3>
+                    <ul>
+                        <li><strong>Calidad Absoluta:</strong> Precisión técnica para cero filtraciones.</li>
+                        <li><strong>Innovación:</strong> Evolución permanente en nuestros ensambles.</li>
+                        <li><strong>Asesoría Transparente:</strong> Acompañamiento honeston en cada obra.</li>
+                        <li><strong>Sostenibilidad:</strong> Eficiencia energética y protección ambiental.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir nuestras tejas termoacústicas?</h2>
+            <p class="section-subtitle">Diseñadas estructuralmente para ofrecer el máximo confort térmico, un blindaje duradero y una eficiencia energética insuperable.</p>
+            <div class="grid-benefits">
+                <div class="card">
+                    <div class="card-icon">🌡️</div>
+                    <h3>Bloqueo Térmico</h3>
+                    <p>Frena la radiación solar y reduce drásticamente la temperatura interna, ahorrando en aire acondicionado.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌧️</div>
+                    <h3>Amortiguación Acústica</h3>
+                    <p>Disminuye significativamente el impacto del ruido exterior ocasionado por fuertes lluvias o granizadas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Larga Durabilidad</h3>
+                    <p>Materiales de calidad estables ante rayos UV y ambientes corrosivos sin perder propiedades físicas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3>Seguridad ante el Fuego</h3>
+                    <p>El núcleo de polietileno cuenta con propiedades autoextinguibles, minimizando la propagación de llamas frente a riesgos de incendio.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Hermeticidad Total</h3>
+                    <p>Sistema de ensamblaje continuo y preciso que elimina cualquier riesgo de goteras o filtraciones de humedad.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Retorno de Inversión</h3>
+                    <p>Una cubierta inteligente que revaloriza tu edificación y disminuye tus costos operativos fijos mensuales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-construccion" class="video-section">
+        <div class="container">
+            <h2 class="section-title">Sistema Constructivo Tipo Sándwich en Sitio</h2>
+            <p class="section-subtitle">Mira en acción el proceso de armado y ensamble técnico de nuestras cubiertas. Soluciones sin traslapos diseñadas para garantizar hermeticidad total.</p>
+            
+            <div class="video-wrapper">
+                <iframe 
+                    width="100%" 
+                    height="400" 
+                    src="https://www.youtube.com/embed/EaF1eG5JQHA" 
+                    title="Proceso Constructivo IsoSealTech" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="producto" class="product-info">
+        <div class="container">
+            <h2 class="section-title">Especificaciones Técnicas del Producto</h2>
+            <div class="product-box">
+                <div class="product-image-container">
+                    <img src="imagen-para-pagina-web-2.png" alt="Teja Termoacústica con Núcleo de Polietileno">
+                    <div class="product-image-overlay">
+                        <span>Núcleo de Polietileno de Celda Cerrada</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Teja Termoacústica Premium</h3>
+                    <p>Nuestra teja destaca por su núcleo aislante de alta ingeniería compuesto por <strong>espuma de polietileno de celda cerrada</strong>. Esta estructura estanca previene por completo la absorción de humedad y agua, garantizando ligereza estructural, una barrera de vapor excepcional y un óptimo desempeño a lo largo de los años en cubiertas comerciales, residenciales e industriales.</p>
+                    <ul class="specs-list">
+                        <li><strong>Núcleo Aislante:</strong> Espuma de polietileno expandido de celda cerrada (100% impermeable).</li>
+                        <li><strong>Espesores Disponibles:</strong> Rangos flexibles desde 5mm hasta 40mm según la exigencia del proyecto.</li>
+                        <li><strong>Ancho Útil:</strong> 0.50 metros estándar optimizado para un montaje rápido y preciso.</li>
+                        <li><strong>Seguridad de Cierre:</strong> Sistema de encaje por grafado continuo que anula toda filtración de agua.</li>
+                        <li><strong>Acabados:</strong> Variedad de colores de alta estabilidad y resistencia a la intemperie.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fichas-section">
                 <h4>Descarga de Documentación y Fichas Técnicas</h4>
                 <div class="fichas-flex-container">
                     
@@ -28,7 +957,7 @@
                         </div>
                     </div>
 
-                    <!-- Ficha 3: Isopanel (NUEVO PRODUCTO) -->
+                    <!-- Ficha 3: Isopanel (NUEVO PRODUCTO INTEGRADO) -->
                     <div class="ficha-bloque-modular">
                         <a href="https://drive.google.com/file/d/1Nyu1eXfjd0ha3-yXfOpY33fTIARZGa5a/view?usp=sharing" target="_blank" class="btn-ficten btn-blue">
                             📄 Ficha Técnica Teja Panel Termoacústica Isopanel
@@ -56,3 +985,158 @@
 
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="incentivos" class="incentivos-section">
+        <div class="container">
+            <h2 class="section-title">Incentivos Fiscales de Ley para tu Proyecto</h2>
+            <p class="section-subtitle">Nuestras soluciones integradas con alma de polietileno califican en los marcos de eficiencia energética en Colombia (Ley 1715 de 2014 y Ley 2099 de 2021).</p>
+            
+            <div class="incentivos-box">
+                <div class="incentivos-layout">
+                    <div class="incentivos-texto">
+                        <h3>¿A qué beneficios puede acceder tu obra?</h3>
+                        <p>Al integrar nuestras soluciones de cubiertas sándwich en diseños enfocados en la <strong>Gestión Eficiente de la Energía (GEE)</strong>, el inversionista final del proyecto puede aplicar a:</p>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 20px;">
+                            <li style="margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 15px; line-height: 1.5;"><span style="color: #2563eb; font-weight: bold; position: absolute; left: 0;">✓</span><strong>Deducción Especial de Renta (Aplica a todo formato):</strong> El inversionista / dueño del proyecto tiene derecho a deducir hasta el 50% del valor total de la inversión directa de su impuesto de renta ante la DIAN. Este beneficio aplica plenamente tanto si adquieres el <strong>producto formado monolítico de fábrica</strong> como si compras los <strong>materiales sueltos</strong> (tejas sueltas y placas de aislamiento de polietileno) para su armado en la obra.</li>
+                        </ul>
+                    </div>
+                    <div class="incentivos-legal-box">
+                        <h4>⚖️ Declaración de Alcance y Transparencia</h4>
+                        <p>En <strong>IsoSealTech SAS</strong> actuamos con total honestidad: estos beneficios fiscales son otorgados por el Estado al proyecto global y no de manera automática en el comercio tradicional. <strong>Nuestra empresa no realiza el trámite ni garantiza su aprobación tributaria.</strong></p>
+                        <p style="margin-top: 10px;">Nosotros te entregamos un producto con el rendimiento idóneo, fichas técnicas completas y coeficientes de aislamiento para que tu equipo de ingeniería radique con éxito el proyecto.</p>
+                    </div>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+
+                <h4 style="text-align: center; color: #0f172a; font-size: 18px; margin-bottom: 20px; font-weight: 700;">🏛️ Ruta y Fuentes Oficiales para Gestión de tu Equipo</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    <a href="https://www.suin-juriscol.gov.co/viewDocument.asp?id=30052917" target="_blank" class="btn-legal-link">
+                        <span>📋</span> Consultar Ley en SUIN-Juriscol
+                    </a>
+                    <a href="https://www.upme.gov.co/ventanilla-unica-de-tramites-y-servicios/" target="_blank" class="btn-upme-link">
+                        <span>🏛️</span> Iniciar Trámite en Portal UPME
+                    </a>
+                </div>
+                <p style="text-align: center; color: #64748b; font-size: 13.5px; margin-top: 20px; line-height: 1.5; font-weight: 500;">
+                    ⚠️ *Condición Esencial de Ley: Estos beneficios tributarios aplican única y exclusivamente si el diseño del proyecto evidencia una disminución verificable en el consumo energético global de la edificación (por ejemplo, demostrando un menor uso de sistemas de aire acondicionado o climatización artificial gracias al alto aislamiento de la cubierta).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="asesoria" class="asesoria-section">
+        <div class="container">
+            <div class="asesoria-box">
+                <div class="asesoria-images-container">
+                    <img src="https://drive.google.com/thumbnail?id=1QKt6C4i6oYEUn7sJyS4HaXN6a8CNBllE&sz=w1000" alt="Asesoría Técnica IsoSealTech SAS">
+                    <img src="https://drive.google.com/thumbnail?id=10Zp6ek5TbAQhrByicuQOqcYGtAcVE6eh&sz=w1000" alt="Instalación y dimensionamiento de cubiertas">
+                </div>
+                <div class="asesoria-details">
+                    <h2>Suministro con Respaldo Técnico: Evita Errores y Costos Extra</h2>
+                    <p>En IsoSealTech SAS entendemos que comprar materiales técnicos como tejas termoacústicas y perfiles es solo el primer paso. Una mala elección de calibre, accesorio o perfil puede resultar en filtraciones, ruidos molestos o un gasto innecesario de presupuesto.</p>
+                    <p><strong>Nuestro compromiso va más allá de la venta.</strong> Te ofrecemos el acompañamiento experto para asegurar la correcta especificación de tu cubierta estructural.</p>
+                    <ul class="asesoria-list">
+                        <li><strong>Análisis preciso del producto:</strong> Evaluamos las condiciones de tu proyecto y exigencias climáticas para recomendarte el espesor exacto.</li>
+                        <li><strong>Cálculo de complementos:</strong> Especificamos los perfiles de acero PHR, fijaciones y accesorios con ajuste perfecto a tu estructura.</li>
+                        <li><strong>Alineación documentaria para UPME:</strong> Te facilitamos las fichas técnicas y coeficientes R/U térmicos exactos de nuestro sándwich integrado para que tu equipo arme el Estudio de Eficiencia Energética sin retrasos.</li>
+                        <li><strong>Red de instaladores aliados:</strong> Nosotros no realizamos la instalación directa, pero te conectamos y recomendamos profesionales expertos certificados de total confianza para ejecutar la obra.</li>
+                    </ul>
+                    <a href="https://wa.me/573107905598?text=Hola%20Jorge,%20vengo%20de%20la%20página%20web.%20Quiero%20recibir%20asesoría%20técnica%20sobre%20mi%20proyecto%20de%20cubiertas%20y%20los%20soportes%20para%20la%20UPME." target="_blank" class="btn-cta">
+                        Contactar a un Asesor Técnico
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="complementos" class="complements-section">
+        <div class="container">
+            <h2 class="section-title">Línea de Complementos para Estructuras y Cubiertas</h2>
+            <p class="section-subtitle">Suministramos materiales complementarios de alta resistencia para garantizar la estabilidad y el soporte de todo tipo de proyectos de construcción.</p>
+            <div class="complements-grid">
+                <div class="complement-card">
+                    <div class="complement-img-wrapper"><img src="https://drive.google.com/thumbnail?id=14yMGcwSA3xbHS-Dv6U8Vwy3OI9jiLHfi&sz=w500" alt="Perfiles Estructuras Metálicas PHR en C"></div>
+                    <h3>Perfiles PHR en C</h3>
+                    <p>Perfiles de acero formados en frío, ideales para vigas de corona, correas de soporte y pórticos estructurales.</p>
+                    <a href="#contacto" class="btn-complement">Cotizar Perfiles</a>
+                </div>
+                <div class="complement-card">
+                    <div class="complement-img-wrapper"><img src="https://drive.google.com/thumbnail?id=1Fa4opJGOqQf2OuTvKjXQ3omc8W9UhzYW&sz=w500" alt="Lámina Colaborante Metaldeck Losas de Concreto"></div>
+                    <h3>Lámina Colaborante</h3>
+                    <p>Placas de acero galvanizado con nervaduras profundas diseñadas para actuar como encofrado permanente.</p>
+                    <a href="#contacto" class="btn-complement">Cotizar Láminas</a>
+                </div>
+                <div class="complement-card">
+                    <div class="complement-img-wrapper"><img src="https://drive.google.com/thumbnail?id=1jNl4biSNiiSQs3_ZlZUZwU-0i6UXpG96&sz=w500" alt="Teja Metálica Trapezoidal Tipo Arquitectónica"></div>
+                    <h3>Teja Trapezoidal 8 Crestas</h3>
+                    <p>Cubierta metálica sencilla de geometría tipo arquitectónica. Sus 8 crestas ofrecen una óptima rigidez.</p>
+                    <a href="#contacto" class="btn-complement">Cotizar Teja 8C</a>
+                </div>
+                <div class="complement-card">
+                    <div class="complement-img-wrapper"><img src="https://drive.google.com/thumbnail?id=1nv4yMcq3ebGiRys9uwh9jbjF1KuSDAo7&sz=w500" alt="Teja Metálica Sencilla Tipo Supermil"></div>
+                    <h3>Teja Supermil 4 Crestas</h3>
+                    <p>Perfil trapezoidal reforzado de alto calibre con 4 crestas pronunciadas.</p>
+                    <a href="#contacto" class="btn-complement">Cotizar Teja 4C</a>
+                </div>
+                <div class="complement-card">
+                    <div class="complement-img-wrapper"><img src="https://drive.google.com/thumbnail?id=1rxcJukkROwqW-al-dRKECI0IdfLfdt91&sz=w500" alt="Teja Sencilla Sin Traslapo Continuo"></div>
+                    <h3>Teja Sencilla Sin Traslapo</h3>
+                    <p>Cubierta de perfil continuo fabricada directamente en obra. Elimina cualquier riesgo de filtraciones.</p>
+                    <a href="#contacto" class="btn-complement">Cotizar Sin Traslapo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info-text">
+                    <h2>¿Listo para optimizar tu cubierta?</h2>
+                    <p>Déjanos asesorarte de forma personalizada. Solicita una cotización a la medida de tu proyecto residencial o industrial sin ningún compromiso. Completa el formulario y un especialista técnico se comunicará contigo en el menor tiempo posible.</p>
+                    <p style="color: #64748b; font-size: 14px;">📍 Respaldo corporativo y técnico garantizado por IsoSealTech SAS en toda Colombia.</p>
+                </div>
+                <div class="form-container">
+                    <form name="cotizacion" method="POST" data-netlify="true">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo / Empresa:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Constructora Norte" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo" name="email" placeholder="contacto@empresa.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Número de Celular / Contacto:</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ej. 310 123 4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cantidad">Metros Cuadrados Estimados (m²):</label>
+                            <input type="number" id="cantidad" name="cantidad" placeholder="Ej. 350">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Detalles del Proyecto:</label>
+                            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos la ubicación de la obra, el espesor de núcleo requerido o tipo de estructura..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Solicitud de Cotización</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/573107905598?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quiero%20asesoría%20sobre%20las%20tejas%20termoacústicas" target="_blank" class="whatsapp-floating">
+        <span>💬 ¡Ventas e Info Técnica Directa! WhatsApp</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 IsoSealTech SAS. Todos los derechos reservados. Soluciones de Aislamiento de Alta Ingeniería.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
